@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showHello = true
+    
     var body: some View {
         VStack {
-            Text("Hello, world!")
-            Spacer()
-                .frame(height: 50)
-            Text("Hello")
+            Toggle(isOn: $showHello, label: {
+                Text("Show Hello")
+            }).padding()
             
+            if showHello {
+                Text("Hello")
+            } 
         }
     }
 }
